@@ -1,0 +1,38 @@
+import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'folder/Inbox',
+    pathMatch: 'full'
+  },
+  {
+    path: 'folder/:id',
+    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'medicion',
+    loadChildren: () => import('./medicion/medicion.module').then( m => m.MedicionPageModule)
+  },
+  {
+    path: 'registrar',
+    loadChildren: () => import('./registrar/registrar.module').then( m => m.RegistrarPageModule)
+  },
+  {
+    path: 'ubicacion',
+    loadChildren: () => import('./ubicacion/ubicacion.module').then( m => m.UbicacionPageModule)
+  },
+  {
+    path: 'trabajo',
+    loadChildren: () => import('./trabajo/trabajo.module').then( m => m.TrabajoPageModule)
+  }
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
