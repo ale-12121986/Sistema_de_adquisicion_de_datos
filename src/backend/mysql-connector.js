@@ -2,7 +2,7 @@ const mysql = require('mysql');
 
 const configMysql = {
     connectionLimit: 10,
-    host: '192.168.2.40', //'192.168.0.40'  '192.168.248.8'
+    host: '192.168.2.4', // '192.168.2.40' '192.168.0.40'  '192.168.248.8'
     port: '3306',
     user: 'root',
     password: 'userpass',

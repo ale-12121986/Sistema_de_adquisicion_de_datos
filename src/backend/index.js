@@ -9,10 +9,11 @@ const bodyParser = require('body-parser'); // Importa el módulo body-parser
 var app = express();
 app.use(bodyParser.json()); // Agrega el middleware bodyParser.json()
 var pool = require('./mysql-connector');
-const routerDispositivo = require('./routes/dispositivo');
-const routerSensor = require('./routes/sensor');
-const routerListaSensor = require('./routes/lista-sensor');
-const routerListaRiegos = require('./routes/lista-riegos');
+const routerRegistrar = require('./routes/registrar');
+// const routerDispositivo = require('./routes/dispositivo');
+// const routerSensor = require('./routes/sensor');
+// const routerListaSensor = require('./routes/lista-sensor');
+// const routerListaRiegos = require('./routes/lista-riegos');
 var corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -37,16 +38,16 @@ app.use(express.json());
 app.use(express.static('/home/node/app/static/'));
 // to enable corss
 app.use(cors(corsOptions));
- 
-app.use('/dispositivo', routerDispositivo);
-app.use('/sensor', routerSensor);
-app.use('/lista-sensor', routerListaSensor);
-app.use('/lista-riegos',routerListaRiegos);
+app.use('/registrar', routerRegistrar); 
+// app.use('/dispositivo', routerDispositivo);
+// app.use('/sensor', routerSensor);
+// app.use('/lista-sensor', routerListaSensor);
+// app.use('/lista-riegos',routerListaRiegos);
 
 //=======[ Main module code ]==================================================
 
 app.get('/', function(req, res, next) {
-    res.send({'mensaje': 'Hola DAM'}).status(200);
+    res.send({'mensaje': 'Hola Mundo'}).status(200);
 });
 
 // app.get('/user/', function(req, res, next) {

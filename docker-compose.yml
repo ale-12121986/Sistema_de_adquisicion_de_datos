@@ -1,6 +1,5 @@
 version: '0.1'
 #version: '3.7'
-
 services:
 
     ionic-ui:
@@ -13,7 +12,8 @@ services:
         volumes:
             -                   ./src/frontend/proyecto:/src/frontend/proyecto
             -                    /src/frontend/proyecto/node_modules
-        command:               ionic serve --external --live-reload=true --progress=true 
+        command:               ionic serve --external --live-reload=true --progress=true --lab --no-open
+
 
         #command: ionic serve --open --live-reload=true --progress=true
 
@@ -21,6 +21,7 @@ services:
         image:                   mysql:5.7
         hostname:                mysql-server
         environment:
+            MYSQL_DATABASE:      Bateadora
             MYSQL_ROOT_PASSWORD: userpass
         container_name:          mysql-server
         volumes:
