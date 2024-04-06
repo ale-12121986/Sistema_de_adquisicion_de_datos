@@ -24,4 +24,11 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-list>
+    <ion-item *ngFor="let registros of equipos" 
+    [routerLink] = "['/trabajo',registros.idbateadora]" detail="">
+    <ion-icon slot="start" name ="train"></ion-icon>
+      <ion-label>{{registros.numeroBateadora}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

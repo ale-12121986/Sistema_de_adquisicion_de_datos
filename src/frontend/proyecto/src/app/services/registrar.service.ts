@@ -12,7 +12,6 @@ export class RegistrarService {
   getEquiposRegistrados(): Promise<any>{
     console.log("entro");
     return firstValueFrom(this._http.get('http://localhost:8000/registrar/'));
-     
 
   }
 }

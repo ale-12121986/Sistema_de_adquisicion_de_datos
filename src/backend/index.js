@@ -10,7 +10,7 @@ var app = express();
 app.use(bodyParser.json()); // Agrega el middleware bodyParser.json()
 var pool = require('./mysql-connector');
 const routerRegistrar = require('./routes/registrar');
-// const routerDispositivo = require('./routes/dispositivo');
+const routerTrabajo = require('./routes/trabajo');
 // const routerSensor = require('./routes/sensor');
 // const routerListaSensor = require('./routes/lista-sensor');
 // const routerListaRiegos = require('./routes/lista-riegos');
@@ -39,7 +39,7 @@ app.use(express.static('/home/node/app/static/'));
 // to enable corss
 app.use(cors(corsOptions));
 app.use('/registrar', routerRegistrar); 
-// app.use('/dispositivo', routerDispositivo);
+app.use('/trabajo', routerTrabajo);
 // app.use('/sensor', routerSensor);
 // app.use('/lista-sensor', routerListaSensor);
 // app.use('/lista-riegos',routerListaRiegos);

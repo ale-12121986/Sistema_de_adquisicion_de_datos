@@ -10,4 +10,23 @@
       <ion-title size="large">trabajo</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>Linea</ion-col>
+      <ion-col>Via</ion-col>
+      <ion-col>Ramal</ion-col>
+      <ion-col>Progresiva Inicial</ion-col>
+      <ion-col>Progresiva Final</ion-col>
+      <ion-col>Fecha</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row *ngFor="let dato of datosTrabajo">
+    <ion-col>{{ dato.linea }}</ion-col>
+    <ion-col>{{ dato.via }}</ion-col>
+    <ion-col>{{ dato.ramal }}</ion-col>
+    <ion-col>{{ dato.progresivainical }}</ion-col>
+    <ion-col>{{ dato.progresivafinal }}</ion-col>
+    <ion-col>{{ dato.fecha }}</ion-col>
+  </ion-row>
+
 </ion-content>
