@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TrabajoService } from '../services/trabajo.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Trabajo } from '../interfaces/trabajo';
+import { CargarTrabajoPage } from '../cargar-trabajo/cargar-trabajo.page';
 @Component({
   selector: 'app-trabajo',
   templateUrl: './trabajo.page.html',
@@ -8,8 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TrabajoPage implements OnInit {
   id: any;
-  datosTrabajo: any[]=[];
-  constructor(private _trabajoService: TrabajoService, private activateRoutes: ActivatedRoute) {
+  datosTrabajo: Trabajo[]=[];
+  constructor(private _trabajoService: TrabajoService, private activateRoutes: ActivatedRoute,private router:Router) {
     this.id = 0;
   }
 
@@ -24,6 +26,9 @@ export class TrabajoPage implements OnInit {
     .catch((error)=>{
       console.log(error)
     })
+  }
+  guardar(){
+    this.router.navigate([CargarTrabajoPage]);
   }
 
 }

@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'cargar-trabajo/:id',
+    loadChildren: () => import('./cargar-trabajo/cargar-trabajo.module').then( m => m.CargarTrabajoPageModule)
   }
 ];
 
