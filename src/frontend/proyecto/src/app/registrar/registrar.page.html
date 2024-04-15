@@ -13,22 +13,26 @@
   </ion-header>
   <ion-grid>
     <ion-row>
-      <ion-col size="4">
-        <ion-button expand="full">Registrar</ion-button>
+      <ion-col size="12">
+        <ion-button expand="full" (click)="guardar()">Registrar</ion-button>
       </ion-col>
-      <ion-col size="4">
-        <ion-button expand="full">Modificar</ion-button>
-      </ion-col>
-      <ion-col size="4">
-        <ion-button expand="full">Eliminar</ion-button>
-      </ion-col>
+
     </ion-row>
   </ion-grid>
   <ion-list>
     <ion-item *ngFor="let registros of equipos" 
-    [routerLink] = "['/trabajo',registros.idbateadora]" detail="">
+     detail="">
     <ion-icon slot="start" name ="train"></ion-icon>
       <ion-label>{{registros.numeroBateadora}}</ion-label>
+      <ion-button shape="round"  (click)="eliminar(registros.idbateadora)" color="danger">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+      <ion-button shape="round"  (click)="modificar(registros.idbateadora)" color="primary">
+        <ion-icon name="create"></ion-icon>
+      </ion-button>
+      <ion-button shape="round"  [routerLink] = "['/trabajo',registros.idbateadora]" color="success">
+        <ion-icon name="list-outline"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

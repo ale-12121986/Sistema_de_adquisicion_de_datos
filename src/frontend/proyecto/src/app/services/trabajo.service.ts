@@ -13,4 +13,8 @@ export class TrabajoService {
     console.log("dato que llego" + dato);
     return firstValueFrom(this._http.get('http://localhost:8000/trabajo/'+ dato));
   }
+  setEliminarTrabajo(dato:any):Promise<any>{
+    console.log("dato que llego para eliminar: ", dato.idTrabajo);
+    return firstValueFrom(this._http.post('http://localhost:8000/trabajo/eliminar', dato));
+  }
 }

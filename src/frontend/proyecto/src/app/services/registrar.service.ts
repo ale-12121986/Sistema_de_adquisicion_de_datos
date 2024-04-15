@@ -14,4 +14,13 @@ export class RegistrarService {
     return firstValueFrom(this._http.get('http://localhost:8000/registrar/'));
 
   }
+
+  setCargarEquipo(datos:any):Promise<any>{
+    console.log("cargo un nuevo equipo de via ");
+    return firstValueFrom(this._http.post('http://localhost:8000/registrar/datos',datos));
+  }
+  setEliminiarEquipos(datos:any):Promise<any>{
+    console.log("Se elimino Registro", datos);
+    return firstValueFrom(this._http.post('http://localhost:8000/registrar/eliminar', datos));
+  }
 }
