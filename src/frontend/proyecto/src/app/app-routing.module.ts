@@ -11,10 +11,10 @@ const routes: Routes = [
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
-  {
-    path: 'medicion/:id',
-    loadChildren: () => import('./medicion/medicion.module').then( m => m.MedicionPageModule)
-  },
+  // {
+  //   path: 'medicion/:id',
+  //   loadChildren: () => import('./medicion/medicion.module').then( m => m.MedicionPageModule)
+  // },
   {
     path: 'registrar',
     loadChildren: () => import('./registrar/registrar.module').then( m => m.RegistrarPageModule)
@@ -38,7 +38,15 @@ const routes: Routes = [
   {
     path: 'cargar-trabajo/:id',
     loadChildren: () => import('./cargar-trabajo/cargar-trabajo.module').then( m => m.CargarTrabajoPageModule)
-  }
+  },
+  {
+    path: 'medicion/:id',
+    loadChildren: () => import('./medicion/medicion.module').then( m => m.MedicionPageModule)
+  },
+  {
+    path: 'medicion',
+    loadChildren: () => import('./medicion/medicion.module').then( m => m.MedicionPageModule)
+  },
 ];
 
 @NgModule({

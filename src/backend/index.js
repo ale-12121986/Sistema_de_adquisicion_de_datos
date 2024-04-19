@@ -12,9 +12,8 @@ var pool = require('./mysql-connector');
 const routerRegistrar = require('./routes/registrar');
 const routerTrabajo = require('./routes/trabajo');
 const routerCargarTrabajo = require('./routes/cargar-trabajo');
-// const routerSensor = require('./routes/sensor');
-// const routerListaSensor = require('./routes/lista-sensor');
-// const routerListaRiegos = require('./routes/lista-riegos');
+const routerMedicion = require('./routes/medicion');
+
 var corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -42,25 +41,14 @@ app.use(cors(corsOptions));
 app.use('/registrar', routerRegistrar); 
 app.use('/trabajo', routerTrabajo);
 app.use('/cargar-trabajo', routerCargarTrabajo);
-// app.use('/sensor', routerSensor);
-// app.use('/lista-sensor', routerListaSensor);
-// app.use('/lista-riegos',routerListaRiegos);
+app.use('/medicion', routerMedicion);
+
 
 //=======[ Main module code ]==================================================
 
 app.get('/', function(req, res, next) {
     res.send({'mensaje': 'Hola Mundo'}).status(200);
 });
-
-// app.get('/user/', function(req, res, next) {
-//     pool.query('Select * from Usuarios', function(err, result, fields) {
-//         if (err) {
-//             res.send(err).status(400);
-//             return;
-//         }
-//         res.send(result);
-//     });
-// });
 
 app.listen(PORT, function(req, res) {
     console.log("NodeJS API running correctly");

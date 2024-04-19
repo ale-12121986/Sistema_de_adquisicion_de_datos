@@ -1,4 +1,5 @@
 export interface Medicion {
+    idMedicion:number;
     alineacion:number;
     peralte:number;
     nivel_izquierdo: number;
