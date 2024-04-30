@@ -66,6 +66,7 @@ services:
         ports:
             -                       "18083:18083"
             -                       "8083:8083"
+            -                       "8084:8084"
         networks:
             Sistema_de_adquisicion_de_datos:
                 aliases:
