@@ -13,10 +13,6 @@ services:
             -                   ./src/frontend/proyecto:/src/frontend/proyecto
             -                    /src/frontend/proyecto/node_modules
         command:               ionic serve --external --live-reload=true --progress=true --lab --no-open
-
-
-        #command: ionic serve --open --live-reload=true --progress=true
-
     mysql-server:
         image:                   mysql:5.7
         hostname:                mysql-server
@@ -71,6 +67,7 @@ services:
             -                       "1883:1883"
         volumes:
             -                     ./certificados:/opt/emqx/etc/certs
+
         networks:
             Sistema_de_adquisicion_de_datos:
                 aliases:

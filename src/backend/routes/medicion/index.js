@@ -1,7 +1,7 @@
 const express = require('express')
 
 const routerMedicion = express.Router()
-
+//const mqtt = require('mqtt');
 var pool = require('../../mysql-connector');
 
 

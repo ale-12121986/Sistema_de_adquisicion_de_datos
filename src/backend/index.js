@@ -5,6 +5,7 @@ var PORT    = 3000;
 const cors = require('cors');
 
 var express = require('express');
+
 const bodyParser = require('body-parser'); // Importa el módulo body-parser
 var app = express();
 app.use(bodyParser.json()); // Agrega el middleware bodyParser.json()
