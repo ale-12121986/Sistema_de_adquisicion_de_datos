@@ -13,7 +13,7 @@ const routerRegistrar = require('./routes/registrar');
 const routerTrabajo = require('./routes/trabajo');
 const routerCargarTrabajo = require('./routes/cargar-trabajo');
 const routerMedicion = require('./routes/medicion');
-
+const routerMqtt = require('./routes/mqtt');
 var corsOptions = {
     origin: '*',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
@@ -42,7 +42,6 @@ app.use('/registrar', routerRegistrar);
 app.use('/trabajo', routerTrabajo);
 app.use('/cargar-trabajo', routerCargarTrabajo);
 app.use('/medicion', routerMedicion);
-
 
 //=======[ Main module code ]==================================================
 

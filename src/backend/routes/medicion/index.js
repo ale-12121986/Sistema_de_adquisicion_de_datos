@@ -4,6 +4,7 @@ const routerMedicion = express.Router()
 
 var pool = require('../../mysql-connector');
 
+
 routerMedicion.get('/:buscar', function (req, res) {
     const valor = req.params.buscar;
     console.log("entro al back de medicion con el valor ",valor);
@@ -18,5 +19,9 @@ routerMedicion.get('/:buscar', function (req, res) {
         res.send(results).status(200);
     });
 });
+
+
+
+
 module.exports=routerMedicion;
     

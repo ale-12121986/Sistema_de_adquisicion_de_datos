@@ -66,6 +66,11 @@ services:
         ports:
             -                       "18083:18083"
             -                       "8083:8083"
+            -                       "8084:8084"
+            -                       "8883:8883"
+            -                       "1883:1883"
+        volumes:
+            -                     ./certificados:/opt/emqx/etc/certs
         networks:
             Sistema_de_adquisicion_de_datos:
                 aliases:
